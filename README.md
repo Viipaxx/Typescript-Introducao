@@ -279,3 +279,21 @@ os data modifiers também podem ser implementados nos métodos dentro da classe
 )
 
 <hr>
+
+## Generics
+
+#### serve para deixar em aberto o tipo que você vai passar como parâmetro
+
+#### Criando função generic (
+    function concatArray<T>(...itens: T[]): T[] {
+        return new Array().concat(...itens)
+    }
+        
+    const numArray = concatArray<number[]>([1, 5], [3], [4, 5])
+    const stgArray = concatArray<string[]>(["Vitor", "Naruto"], ["Luffy"])
+
+    numArray.push("saitama") // Erro
+
+    console.log(numArray)
+    console.log(stgArray)
+)
