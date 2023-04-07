@@ -95,4 +95,6 @@
 
 ## Dates
 
-####
+#### Declaração de Dates (
+    let aniversario: Date = new Date("2022-12-01 05:00")
+)
