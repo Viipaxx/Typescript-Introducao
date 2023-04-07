@@ -98,3 +98,47 @@
 #### Declaração de Dates (
     let aniversario: Date = new Date("2022-12-01 05:00")
 )
+
+<hr>
+
+## Funções
+
+#### Criando funções (
+
+    as funções podem ter o seu tipo já declarado
+
+    function addNumber(x: number, y: number): number {
+        return x + y
+    }
+
+    ou podem ter o seu tipo implicito, onde o próprio código vai saber o tipo
+
+    function addToHello(name: string){
+        return `Hello ${name}`
+    }
+
+    let soma: number = addNumber(4, 8)
+    console.log(addToHello("Vitor"))
+)
+
+## Funções multi tipos
+
+#### Criando funções multi tipos (
+
+    Nas funções multi tipos você pode receber o retorno tanto de um tipo como de outro
+
+    function callToPhone(phone: number | string): number | string {
+    return phone;
+}
+)
+
+## Funções Async
+
+#### Criando funções async (
+ 
+    async function getDatabase(id: number): Promise<string> {
+    return "Vitor"
+
+    todas as funções async tem que ter a promise do tipo que você quer que retorne
+}
+)
