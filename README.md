@@ -142,3 +142,36 @@
     todas as funções async tem que ter a promise do tipo que você quer que retorne
 }
 )
+
+<hr>
+
+## Interfaces (contrato)
+
+### interfaces -> tem uma estrutura de propriedades, e funciona do mesmo modo do type
+### types é usado mais para o fato de você tipar algo, interface é mais usado para usar em classe
+
+#### Criando uma interface (
+    type robot = {
+        readonly id: number | string;
+        name: string;
+    }
+
+    interface robot2 {
+        readonly id: number | string;
+        name: string;
+    }
+
+    const bot: robot2 = {
+        id: 1,
+        name: "Vitor"
+    } 
+
+    const bot2: robot = {
+        id: 1,
+        name: "Vitor"
+    } 
+
+    readonly propriedade usada para que o usuário não possa modificar
+)
+
+##### Quando usar? use o type quando você for definir a forma como uma variavel ou uma const tem que receber seus valores; use o interface quando você for usar em classes para implementar algo (um contrato)
