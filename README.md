@@ -175,3 +175,107 @@
 )
 
 ##### Quando usar? use o type quando você for definir a forma como uma variavel ou uma const tem que receber seus valores; use o interface quando você for usar em classes para implementar algo (um contrato)
+
+<hr>
+
+## Classes
+
+#### Uma classe nada mais é do que uma forma 
+
+#### Criando uma classe e instanciando-a (
+    class Character {
+        name?: string; (a ? é para dizer que o parâmetro não é obrigatório)
+        stregth: number;
+        skill: number;
+
+        constructor (streght: number, skill: number) {
+            // this.name = name
+            this.stregth = streght
+            this.skill = skill
+        }
+
+        attack(): void{
+            console.log(`Attack with ${this.stregth} points`)
+        }
+    }
+
+    const p1 = new Character(10, 98)
+    console.log(p1.attack())
+        [Attack with 10 points]
+)
+
+## Modificadores de Acesso -> data modifies
+
+#### Quem pode acessar um determinado dado da classe
+#### Existem três tipos: public, private e protected
+
+- private: o dado só pode ser acessado dentro da classe
+- public: o dado pode ser acessado de qualquer lugar
+- protected: o dado só pode ser acessado dentro da classe e de subclasses que herdem essa classe
+
+#### Criando classe com modificador de acesso (
+    
+class Character {
+    private name?: string; (só pode ser acessado dentro da classe)
+    public stregth: number; (pode ser acessado de qualquer lugar)
+    protected skill: number; (só pode ser acessado dentro da classe ou de subclasses que herdem essa classe)
+
+        constructor (name: string, streght: number, skill: number) {
+            this.name = name
+            this.stregth = streght
+            this.skill = skill
+        }
+
+        attack(): void{
+            console.log(`Attack with ${this.stregth} points`)
+        }
+    }
+
+    const p1 = new Character("Gusman", 10, 98)
+
+    console.log(p1.attack()) 
+)
+
+os data modifiers também podem ser implementados nos métodos dentro da classe
+
+## Subclass
+
+#### uma classe que herda de outras classe
+
+#### Criando uma subclass (
+    class Character {
+        private name?: string;
+        stregth: number;
+        skill: number;
+
+        constructor(name: string, streght: number, skill: number) {
+            this.name = name
+            this.stregth = streght
+            this.skill = skill
+        }
+
+        attack(): void {
+            console.log(`Attack with ${this.stregth} points`)
+        }
+    }
+
+    // Character: superclass
+    // Magician: subclass
+    class Magician extends Character {
+
+        magicPoints: number;
+
+        constructor(name: string, streght: number, skill: number, magicPoints: number) {
+            super(name, streght, skill);
+            this.magicPoints = magicPoints
+        }
+    }
+
+    const p1 = new Character("Gusman", 10, 98)
+    console.log(p1.attack())
+
+    const p2 = new Magician("Mago", 9, 30, 100)
+    console.log(p2.attack())
+)
+
+<hr>
